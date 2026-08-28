@@ -222,3 +222,8 @@ __marimo__/
 .env
 *.db
 .DS_Store
+
+model-service/venv/
+model-service/model.joblib
+model-service/.pytest_cache/
+model.joblib
