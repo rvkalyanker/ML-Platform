@@ -1,3 +1,4 @@
+import os
 import time
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -5,8 +6,7 @@ from app.model_loader import load_model, is_model_loaded, predict
 
 app = FastAPI(title="Model Service")
 
-MODEL_VERSION = "v1"
-
+MODEL_VERSION = os.getenv("MODEL_VERSION", "v1")
 
 @app.on_event("startup")
 def startup_event():

@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: model-service
+  name: model-service-v2
   labels:
     app: model-service
-    version: v1
+    version: v2
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: model-service
-      version: v1
+      version: v2
   template:
     metadata:
       labels:
         app: model-service
-        version: v1
+        version: v2
     spec:
       containers:
         - name: model-service
-          image: model-service:v1
+          image: model-service:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
